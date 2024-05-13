@@ -4,10 +4,13 @@
 0x26e8b8B9204F58b05B9bB9bfFD8771480FDb8399 - 4
 0x02eEd092311a3672aB76F09FF497735960de3a97 - 5
 
+password - 1234
 -----------------------------
 
 geth --datadir data --networkid 22042024 --unlock 0x662Bde9ee2CD1027b6C4B0C0E03f95660cAC6bF1 --allow-insecure-unlock --http --http.corsdomain="*" --http.api web3,eth,debug,personal,net,miner --miner.etherbase 0x662Bde9ee2CD1027b6C4B0C0E03f95660cAC6bF1
 запуск чатсной сети блокчейна
+
+-----------------------------
 
 geth attach --datadir data ipc:\\.\pipe\geth.ipc
 создание отдельной консоли geth для того, чтобы управлять процессами в блокчейне
@@ -20,3 +23,13 @@ miner.stop()
 
 eth.blockNumber
 номер блока
+
+-----------------------------
+
+переключиться на кастом
+
+задеплоить
+
+скопировать abi
+
+скопировать смарт контракт
