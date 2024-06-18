@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список всех доступных объявлений</title>
+</head>
+<body>
+    {% include "account-header.html"%}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID объявления</th>
+                <th scope="col">ID недвижимости</th>
+                <th scope="col">Владелец</th>
+                <th scope="col">Покупатель</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ad in ads %}
+            <tr>
+                <td>{{ ad["ID объявления:"] }}</td>
+                <td>{{ ad["ID недвижимости:"] }}</td>
+                <td>{{ ad["Владелец:"] }}</td>
+                <td>{{ ad["Покупатель:"] }}</td>
+                <td>{{ ad["Цена:"] }}</td>
+                <td>{{ ad["Статус:"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+</head>
+<body>
+
+    {% include "account-header.html"%}
+    <h5 style="margin-left: 190px;">Публичный ключ вашего аккаунта: {{account}}</h5>
+
+    <div style="margin-left: 190px;">
+        <p><a href="/menu/Create-Estate/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Создать недвижимость</a></p>
+        <p><a href="/menu/Create-Ad/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Создать объявление</a></p>
+        <p><a href="/menu/Change-Estate/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Изменить статус недвижимости</a></p>
+        <p><a href="/menu/Change-Ad/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Изменить статус объявления</a></p>
+        <p><a href="/menu/Buy-Estate/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Купить недвижимость</a></p>
+        <p><a href="/menu/Send-Eth/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Купить эфиры</a></p>
+        <p><a href="/menu/Withdraw/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Вывести средства</a></p>
+        <p><a href="/menu/Balance/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Вывести баланс</a></p>
+        <p><a href="/menu/Estate-Info/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Вывести информацию о доступной недвижимости</a></p>
+        <p><a href="/menu/Ad-Info/{{account}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Вывести информацию о текущих объявлениях</a></p>
+    </div>
+</body>
+</html>

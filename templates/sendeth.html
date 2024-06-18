@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Купить эфиры</title>
+</head>
+<body>
+    {% include "account-header.html"%}
+    <form method="post" style="width: 800px; margin-left: 190px;">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-3 col-form-label">Публичный ключ покупателя</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputEmail3" name="public_key">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-3 col-form-label">Введите количество эфира для отправки</label>
+          <div class="col-sm-9">
+            <input type="number" min="1" class="form-control" id="inputPassword3" name="value">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="inputEmail4" class="col-sm-3 col-form-label">Введите номер карты</label>
+          <div class="col-sm-9">
+            <input type="number" min="1000000000000000" max="9999999999999999" class="form-control" id="inputEmail4" name="card">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword4" class="col-sm-3 col-form-label">Введите CVV код</label>
+          <div class="col-sm-9">
+            <input type="number" min="100" max="999" class="form-control" id="inputPassword4" name="cvv">
+          </div>
+        </div>
+          {% if error %}
+          <p style="color: tomato; margin-left: 400px ;">Не удалось купить эфиры</p>
+          <p style="color: tomato; margin-left: 400px ;">Ошибка: {{er}}</p>
+          {% endif %}
+          {% if completed %}
+          <p style="color: green; margin-left: 400px ;">Эфир переведен к вам на счет</p>
+          {% endif %}
+        <button type="submit" class="btn btn-primary">Купить</button>
+    </form>
+</body>
+</html>

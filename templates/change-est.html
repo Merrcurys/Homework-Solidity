@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение статуса недвижимости</title>
+</head>
+<body>
+    {% include "account-header.html"%}
+    <form method="post" style="width: 800px; margin-left: 190px;">
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">ID недвижимости</label>
+            <div class="col-sm-10">
+              <input type="number" min="0" class="form-control" id="inputPassword3" name="id_est">
+            </div>
+        </div>
+        {% if error %}
+        <p style="color: tomato; margin-left: 400px ;">Не удалось поменять статус недвижимости</p>
+        <p style="color: tomato; margin-left: 400px ;">Ошибка: {{er}}</p>
+        {% endif %}
+        {% if completed %}
+        <p style="color: green; margin-left: 400px ;">Статус был изменен</p>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Изменить статус</button>
+    </form>
+</body>
+</html>

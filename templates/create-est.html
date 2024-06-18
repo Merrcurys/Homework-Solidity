@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание недвижимости</title>
+</head>
+<body>
+    {% include "account-header.html"%}
+    <form method="post" style="width: 800px; margin-left: 190px;">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Размер</label>
+          <div class="col-sm-10">
+            <input type="number" min="3" class="form-control" id="inputEmail3" name="size">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Адрес</label>
+          <div class="col-sm-10">
+            <input type="text" minlength="2" class="form-control" id="inputPassword3" name="address">
+          </div>
+        </div>
+        <fieldset name="type" class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Тип</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="1" value="1" checked>
+              <label class="form-check-label" for="gridRadios1">
+                Дом
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="2" value="2">
+              <label class="form-check-label" for="gridRadios2">
+                Квартира
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="3" value="3">
+                <label class="form-check-label" for="gridRadios2">
+                  Лофт
+                </label>
+            </div>
+          </div>
+        </fieldset>
+        {% if error %}
+          <p style="color: tomato; margin-left: 400px ;">Не удалось создать недвижимость</p>
+          <p style="color: tomato; margin-left: 400px ;">Ошибка: {{er}}</p>
+        {% endif %}
+        {% if completed %}
+        <p style="color: green; margin-left: 400px ;">Недвижимость была создана!</p>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Создать</button>
+    </form>
+</body>
+</html>

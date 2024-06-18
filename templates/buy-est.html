@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Покупка недвижимости</title>
+</head>
+<body>
+    {% include "account-header.html"%}
+    <form method="post" style="width: 800px; margin-left: 190px;">
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label">ID объявления</label>
+            <div class="col-sm-9">
+              <input type="number" min="0" class="form-control" id="inputPassword3" name="id_ad">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label">Введите количество эфира для отправки</label>
+            <div class="col-sm-9">
+              <input type="number" min="0" class="form-control" id="inputPassword3" name="value">
+            </div>
+          </div>
+          {% if error %}
+          <p style="color: tomato; margin-left: 400px ;">Не удалось купить недвижимость</p>
+          <p style="color: tomato; margin-left: 400px ;">Ошибка: {{er}}</p>
+          {% endif %}
+          {% if completed %}
+          <p style="color: green; margin-left: 400px ;">Недвижимость теперь ваша!</p>
+          {% endif %}
+        <button type="submit" class="btn btn-primary">Купить</button>
+    </form>
+</body>
+</html>
