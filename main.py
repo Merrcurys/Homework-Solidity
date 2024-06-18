@@ -31,11 +31,11 @@ def registration():
         try:
             password = request.form.get('password')
             if (len(password) < 12
-                and any(char.isupper() for char in password)
-                and any(char.islower() for char in password) 
-                and any(char.isdigit() for char in password)
-                and any(char in "!@#$%^&*()-=+;:?.," for char in password)
-                and any(easy in password.lower()
+                or not any(char.isupper() for char in password)
+                or not any(char.islower() for char in password) 
+                or not any(char.isdigit() for char in password)
+                or not any(char in "!@#$%^&*()-=+;:?.," for char in password)
+                or any(easy in password.lower()
                            for easy in ["qwerty", "ytrewq", "123", "321", "1234", "4321", "111", "password"])):
                 return render_template("registration.html",  error=True)
             else:
